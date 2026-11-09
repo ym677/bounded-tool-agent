@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algorithm Studio · 10 个大模型算法实验</title>
+<style>
+* {
+    box-sizing:border-box;
+}
+
+body {
+    margin:0;
+    background:#f1f3ed;
+    color:#1c3435;
+    font-family:"Segoe UI","Microsoft YaHei",sans-serif;
+}
+
+main {
+    max-width:1250px;
+    margin:auto;
+    padding:40px 5%;
+}
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #cdd9ce;
+    padding-bottom:22px;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.intro {
+    position:relative;
+    padding:60px 0 35px;
+    border-bottom:1px solid #ccd8cd;
+}
+
+.eyebrow {
+    color:#37806d;
+    letter-spacing:3px;
+    font-size:11px;
+}
+
+h1 {
+    font-size:clamp(35px,5vw,64px);
+    line-height:1.2;
+    font-weight:600;
+    letter-spacing:-2px;
+    margin:23px 0;
+}
+
+h1 span {
+    font-family:Georgia,serif;
+    font-style:italic;
+    color:#37806d;
+}
+
+.description {
+    color:#718175;
+    font-size:14px;
+    line-height:1.9;
+    max-width:650px;
+}
+
+.count {
+    position:absolute;
+    right:0;
+    top:45px;
+    font:100px Georgia,serif;
+    color:#dce5d9;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:28px;
+}
+
+.card {
+    display:block;
+    background:#fcfdf9;
+    border:1px solid #d7e0d4;
+    padding:27px;
+    color:inherit;
+    text-decoration:none;
+    transition:transform .2s,border-color .2s;
+}
+
+.card:hover {
+    transform:translateY(-3px);
+    border-color:#37806d;
+}
+
+.number {
+    font:12px Consolas,monospace;
+    color:#3b816d;
+    letter-spacing:2px;
+}
+
+.card h2 {
+    font-size:21px;
+    font-weight:600;
+    margin:20px 0 10px;
+}
+
+.card p {
+    font-size:12px;
+    line-height:1.8;
+    color:#7d8d80;
+}
+
+.bottom {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid #e1e8dc;
+    margin-top:25px;
+    padding-top:15px;
+    font-size:10px;
+    letter-spacing:1px;
+    color:#839281;
+}
+
+.arrow {
+    font-size:22px;
+    color:#37806d;
+}
+
+footer {
+    padding:30px 0;
+    color:#87988a;
+    font-size:11px;
+    line-height:1.9;
+}
+
+@media(max-width:700px) {
+    .grid {
+        grid-template-columns:1fr;
+    }
+    .count {
+        display:none;
+    }
+    main {
+        padding-top:25px;
+    }
+    .intro {
+        padding-top:35px;
+    }
+}
+</style>
+</head>
+<body>
+<main>
+<nav>
+<b>A◈S / ALGORITHM STUDIO</b>
+<span>PORTFOLIO · VOL.01</span>
+</nav>
+<section class="intro">
+<div class="eyebrow">APPLIED LANGUAGE INTELLIGENCE</div>
+<h1>把算法，<br>变成可观察的<span>实验。</span>
+</h1>
+<p class="description">十个独立的大模型应用与算法原型。默认在 CPU 上运行本地算法演示，连接自己的 API 后观察真实模型调用。</p>
+<div class="count">10</div>
+</section>
+<section class="grid">{% for slug,title,tags in projects %}<a class="card" href="/{{ slug }}/">
+<div class="number">{{ slug[:2] }} / EXPERIMENT</div>
+<h2>{{ title }}</h2>
+<p>{{ tags }}</p>
+<div class="bottom">
+<span>LOCAL DEMO · OPTIONAL API</span>
+<span class="arrow">↗</span>
+</div>
+</a>{% endfor %}</section>
+<footer>样例资料和演示范围见各项目 README。算法输出来自本次运行，云端能力需要已有 API 配置。<br>每个编号文件夹都可以独立在 PyCharm 中运行并上传 GitHub。</footer>
+</main>
+</body>
+</html>

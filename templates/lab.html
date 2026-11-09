@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ spec.title }} · Algorithm Studio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='lab.css') }}">
+  <script defer src="{{ url_for('static', filename='lab.js') }}"></script>
+</head>
+<body style="--accent:{{ spec.accent|default('#2a736c') }}">
+  <header class="topbar"><a class="brand" href="./">A<span>◈</span>S</a><span class="brand-caption">ALGORITHM STUDIO</span><span class="top-status">CPU READY <i></i></span></header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">APPLIED LANGUAGE INTELLIGENCE <span>/ {{ spec.number }}</span></div>
+      <h1>{{ spec.title }}</h1>
+      <p class="subtitle">{{ spec.subtitle }}</p>
+      <div class="hero-meta"><span>可观察的算法过程</span><span>可核验的运行结果</span><span>独立项目</span></div>
+      <div class="hero-decoration" aria-hidden="true"><span>f(x)</span><div></div><div></div><div></div></div>
+    </section>
+    <section class="workspace">
+      <aside class="input-panel">
+        <div class="panel-title"><span class="step">01</span><h2>定义实验</h2><span class="small-code">INPUT</span></div>
+        <label class="field-label" for="question">{{ spec.input_label|default('输入问题') }}</label>
+        <textarea id="question" spellcheck="false" rows="8">{{ spec.sample_input }}</textarea>
+        <button id="example" class="text-button" type="button" data-sample="{{ spec.sample_input }}">↗ 恢复示例</button>
+        <fieldset><legend>运行方式</legend><label class="mode-option"><input type="radio" name="mode" value="demo" checked><span><b>本地算法演示</b><small>直接计算检索、规划或评估结果</small></span><span class="mode-badge">CPU</span></label><label class="mode-option"><input type="radio" name="mode" value="live"><span><b>连接云端模型</b><small>使用 .env 配置的 API，调用可能计费</small></span><span class="mode-badge">API</span></label></fieldset>
+        <button id="run" class="run-button" type="button"><span>运行实验</span><span>↗</span></button>
+        <p id="status" class="status" role="status">准备就绪。示例资料与候选数据会在结果中注明来源。</p>
+        <div class="method-note"><span class="note-mark">↳</span><p>切换输入，观察证据、路由和决策怎样变化。云端配置方式见项目 README。</p></div>
+      </aside>
+      <article class="output-panel">
+        <div class="panel-title"><span class="step">02</span><h2>运行观察</h2><span id="execution-label" class="small-code">READY</span></div>
+        <div id="empty" class="empty"><div class="empty-symbol">◈</div><h3>让过程可见</h3><p>运行后将在这里展示结果、关键指标与中间过程。</p><div class="empty-line"><span>INPUT</span><i></i><span>REASON</span><i></i><span>VERIFY</span></div></div>
+        <div id="output" hidden><div class="answer"><div class="section-kicker">RESULT</div><p id="summary"></p></div><div id="metrics" class="metrics"></div><div id="sections"></div><details class="raw"><summary>查看本次运行的 JSON</summary><pre id="raw"></pre></details></div>
+      </article>
+    </section>
+    <footer><span>ALGORITHM STUDIO · {{ spec.slug }}</span><span>结果来自当前运行，具体评估范围见项目文档。</span></footer>
+  </main>
+</body>
+</html>

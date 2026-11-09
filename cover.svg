@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+<rect width="1280" height="640" fill="#f2f4ed"/><path d="M0 81H1280M80 0V640" stroke="#cbd5c8"/>
+<text x="118" y="51" font-family="Arial" font-size="15" fill="#617c69" letter-spacing="5">ALGORITHM STUDIO</text>
+<text x="118" y="180" font-family="Consolas,monospace" font-size="44" fill="#287766">04 / 10</text>
+<text x="118" y="295" font-family="Microsoft YaHei,Arial" font-size="58" fill="#1b3332">有预算的工具规划 Agent</text>
+<text x="120" y="355" font-family="Arial,Microsoft YaHei" font-size="21" fill="#7a8c7c">工具白名单 · 步骤约束 · 轨迹</text>
+<path d="M120 455H1160" stroke="#bdccbd"/><circle cx="120" cy="455" r="8" fill="#287766"/><circle cx="630" cy="455" r="8" fill="#287766"/><circle cx="1160" cy="455" r="8" fill="#287766"/>
+<text x="120" y="505" font-family="Arial" font-size="13" letter-spacing="3" fill="#8b9b8b">INPUT</text>
+<text x="590" y="505" font-family="Arial" font-size="13" letter-spacing="3" fill="#8b9b8b">COMPUTE</text>
+<text x="1080" y="505" font-family="Arial" font-size="13" letter-spacing="3" fill="#8b9b8b">VERIFY</text>
+<text x="120" y="600" font-family="Arial" font-size="13" fill="#7a8c7c">CPU DEMO + CONFIGURABLE LLM API</text></svg>
